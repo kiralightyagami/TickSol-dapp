@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "test": "jest tests/"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

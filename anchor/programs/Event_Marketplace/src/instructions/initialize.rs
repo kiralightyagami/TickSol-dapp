@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-use crate::{error::EventMarketplaceError, state::{Event, MAX_DESCRIPTION_LEN, MAX_NAME_LEN}};
+use crate::{error::EventMarketplaceError, states::{Event, MAX_DESCRIPTION_LEN, MAX_NAME_LEN}};
 
 pub fn _initialize(ctx: Context<InitializeContext>, name: String, description: String, ticket_price: u64, available_tickets: u64, start_date: i64) -> Result<()> {
     let event = &mut ctx.accounts.event;
