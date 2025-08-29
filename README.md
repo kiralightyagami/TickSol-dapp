@@ -1,4 +1,4 @@
-# Event_Marketplace
+# Ticksol
 
 This is a Next.js app containing:
 
@@ -10,7 +10,7 @@ This is a Next.js app containing:
 ## Getting Started
 
 ### Installation
-
+S
 #### Download the template
 
 ```shell
