@@ -1,11 +1,5 @@
 # Ticksol
 
-This is a Next.js app containing:
-
-- Tailwind CSS setup for styling
-- Useful wallet UI elements setup using [Gill](https://gill.site/)
-- A basic Greeter Solana program written in Anchor
-- UI components for interacting with the Greeter program
 
 ## Getting Started
 
@@ -14,7 +8,7 @@ S
 #### Download the template
 
 ```shell
-pnpm create solana-dapp@latest -t gh:solana-foundation/templates/gill/Event_Marketplace
+pnpm create solana-dapp@latest -t gh:solana-foundation/templates/gill/Ticksol
 ```
 
 #### Install Dependencies
