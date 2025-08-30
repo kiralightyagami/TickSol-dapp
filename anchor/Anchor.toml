@@ -8,11 +8,14 @@ skip-lint = false
 [programs.localnet]
 Event_Marketplace = "2FmHJnC5o3ydRYLqsABrNvgkt839gon6r5WyTGuHxjjR"
 
+[programs.devnet]
+Event_Marketplace = "2FmHJnC5o3ydRYLqsABrNvgkt839gon6r5WyTGuHxjjR"
+
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]

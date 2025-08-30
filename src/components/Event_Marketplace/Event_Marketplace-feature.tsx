@@ -1,9 +1,9 @@
 import { WalletButton } from '../solana/solana-provider'
-import { EventMarketplaceCreate, EventMarketplaceProgram, EventMarketplaceProgramExplorerLink } from './Event_Marketplace-ui'
+import { EventMarketplaceProgram, EventMarketplaceProgramExplorerLink } from './Event_Marketplace-ui'
 import { AppHero } from '../app-hero'
 import { useWalletUi } from '@wallet-ui/react'
 
-export default function EventMarketplaceFeature() {
+export default function TicketregistryFeature() {
   const { account } = useWalletUi()
 
   if (!account) {
@@ -21,10 +21,6 @@ export default function EventMarketplaceFeature() {
   return (
     <div>
       <AppHero title="EventMarketplace" subtitle={'Run the program by clicking the "Run program" button.'}>
-        <p className="mb-6">
-          <EventMarketplaceProgramExplorerLink />
-        </p>
-        <EventMarketplaceCreate />
       </AppHero>
       <EventMarketplaceProgram />
     </div>

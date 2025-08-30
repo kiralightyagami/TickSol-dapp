@@ -195,7 +195,7 @@ export async function getInitializeInstructionAsync<
       programAddress,
       seeds: [
         getBytesEncoder().encode(new Uint8Array([101, 118, 101, 110, 116])),
-        addEncoderSizePrefix(getUtf8Encoder(), getU32Encoder()).encode(
+        getUtf8Encoder().encode(
           expectSome(args.name)
         ),
         getAddressEncoder().encode(

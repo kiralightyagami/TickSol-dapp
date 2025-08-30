@@ -13,7 +13,7 @@ export function getEventMarketplaceProgramId(cluster: SolanaClusterId) {
     case 'solana:devnet':
     case 'solana:testnet':
       // This is the program ID for the EventMarketplace program on devnet and testnet.
-      return address('')
+      return address('2FmHJnC5o3ydRYLqsABrNvgkt839gon6r5WyTGuHxjjR')
     case 'solana:mainnet':
     default:
       return EVENT_MARKETPLACE_PROGRAM_ADDRESS

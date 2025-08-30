@@ -4,4 +4,5 @@ import EventMarketplaceFeature from '@/components/Event_Marketplace/Event_Market
 
 export default function Page() {
   return <EventMarketplaceFeature />
+
 }
