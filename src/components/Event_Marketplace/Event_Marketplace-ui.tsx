@@ -1,3 +1,4 @@
+'use client'
 import './Event_Marketplace-component-styles.css'
 import { ellipsify, useWalletUi } from '@wallet-ui/react'
 import { Button } from '@/components/ui/button'
@@ -19,8 +20,30 @@ export function EventMarketplaceProgramExplorerLink() {
 }
 
 function BuyTicket({ eventAddress }: { eventAddress: Address }) {
-  const signer = useWalletUiSigner()
+  const { account, cluster } = useWalletUi()
   const client = useWalletUi().client
+  
+  // Always call hooks first, then handle conditional logic
+  let signer
+  try {
+    signer = useWalletUiSigner()
+  } catch (error) {
+    // Handle case where wallet isn't properly connected
+    return (
+      <Button variant="outline" size="sm" disabled>
+        Connect Wallet
+      </Button>
+    )
+  }
+  
+  // Additional check for wallet connection state
+  if (!account || !cluster) {
+    return (
+      <Button variant="outline" size="sm" disabled>
+        Connect Wallet
+      </Button>
+    )
+  }
 
   const buyTicket = async () => {
     const ix = await getBuyInstructionAsync({
@@ -43,9 +66,31 @@ function BuyTicket({ eventAddress }: { eventAddress: Address }) {
 }
 
 function WithdrawFunds({ eventAddress }: { eventAddress: Address }) {
-  const signer = useWalletUiSigner()
+  const { account, cluster } = useWalletUi()
   const client = useWalletUi().client
   const [amount, setAmount] = useState('')
+  
+  // Always call hooks first, then handle conditional logic
+  let signer
+  try {
+    signer = useWalletUiSigner()
+  } catch (error) {
+    // Handle case where wallet isn't properly connected
+    return (
+      <Button variant="outline" size="sm" disabled>
+        Connect Wallet
+      </Button>
+    )
+  }
+  
+  // Additional check for wallet connection state
+  if (!account || !cluster) {
+    return (
+      <Button variant="outline" size="sm" disabled>
+        Connect Wallet
+      </Button>
+    )
+  }
 
 
   const withdraw = async () => {
@@ -125,9 +170,8 @@ function EventList() {
 }
 
 export function CreateEvent() {
-  const signer = useWalletUiSigner()
+  const { account, cluster } = useWalletUi()
   const client = useWalletUi().client
-
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -135,6 +179,28 @@ export function CreateEvent() {
     ticketPrice: '',
     availableTickets: ''
   })
+  
+  // Always call hooks first, then handle conditional logic
+  let signer
+  try {
+    signer = useWalletUiSigner()
+  } catch (error) {
+    // Handle case where wallet isn't properly connected
+    return (
+      <Button variant="outline" size="sm" disabled>
+        Connect Wallet to Create Event
+      </Button>
+    )
+  }
+  
+  // Additional check for wallet connection state
+  if (!account || !cluster) {
+    return (
+      <Button variant="outline" size="sm" disabled>
+        Connect Wallet to Create Event
+      </Button>
+    )
+  }
 
   const handleSubmit = async () => {
     const startDateSeconds = Math.round(new Date(formData.startDate).getTime() / 1000)

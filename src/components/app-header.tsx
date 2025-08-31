@@ -2,8 +2,6 @@
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
 import { ThemeSelect } from '@/components/theme-select'
 import { ClusterButton, WalletButton } from '@/components/solana/solana-provider'
 
@@ -22,25 +20,9 @@ export function AppHeader({ links = [] }: { links: { label: string; path: string
           <Link className="text-xl hover:text-neutral-500 dark:hover:text-white" href="/">
             <span>EventMarketplace</span>
           </Link>
-          <div className="hidden md:flex items-center">
-            <ul className="flex gap-4 flex-nowrap items-center">
-              {links.map(({ label, path }) => (
-                <li key={path}>
-                  <Link
-                    className={`hover:text-neutral-500 dark:hover:text-white ${isActive(path) ? 'text-neutral-500 dark:text-white' : ''}`}
-                    href={path}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
-        <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setShowMenu(!showMenu)}>
-          {showMenu ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
+      
 
         <div className="hidden md:flex items-center gap-4">
           <WalletButton size="sm" />
