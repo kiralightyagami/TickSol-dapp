@@ -277,15 +277,7 @@ We welcome contributions to TickSol! Here's how you can help:
 - The application currently only supports single ticket purchases per transaction
 - Event images are not yet supported
 
-## 🗺️ Roadmap
 
-- [ ] Add support for event images and richer metadata
-- [ ] Implement ticket transfer functionality
-- [ ] Add event categories and filtering
-- [ ] Support for multiple ticket types per event
-- [ ] Integration with IPFS for decentralized metadata storage
-- [ ] Mobile-responsive design improvements
-- [ ] Event analytics dashboard for organizers
 
 ## 📚 Resources
 
